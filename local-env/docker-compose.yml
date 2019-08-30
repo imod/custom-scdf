@@ -1,0 +1,21 @@
+# docker-compose.yml
+---
+version: "3.7"
+
+services:
+  database:
+    image: mysql:5.6.43
+    container_name: scdf_mysql
+    ports:
+      - 3306:3306
+    volumes:
+      - mysql_data:/var/lib/mysql
+    restart: unless-stopped
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --innodb_file_format=Barracuda --innodb_file_per_table=ON --innodb_large_prefix=ON --max_allowed_packet=256M 
+    environment:
+      # - MYSQL_ROOT_PASSWORD: example
+      - MYSQL_ALLOW_EMPTY_PASSWORD=true
+      - MYSQL_DATABASE=scdfdb
+
+volumes:
+  mysql_data:
