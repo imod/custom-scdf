@@ -5,16 +5,18 @@ spring:
 #    allow-bean-definition-overriding: true
   cloud:
     deployer:
-      cloudfoundry:
-        password: XXXXX
-        username: XXXXX
-#        url: https://api.run.pivotal.io
-        url: https://api.lyra-836.appcloud.swisscom.com      
-        org: myorg
-        space: uat
-        buildpack: https://github.com/cloudfoundry/java-buildpack#v4.20
-        services:
-        - mydb
+#      cloudfoundry:
+#        password: XXXXX
+#        username: XXXXX
+##        url: https://api.run.pivotal.io
+#        url: https://api.lyra-836.appcloud.swisscom.com      
+#        org: myorg
+#        space: uat
+#        buildpack: https://github.com/cloudfoundry/java-buildpack#v4.20
+#        services:
+#        - mydb
+      local:
+        java-cmd: java
     dataflow:
       features:
         streams-enabled: false
@@ -27,10 +29,19 @@ spring:
   flyway:
     enabled: true
     
+#  datasource:
+#    type: com.zaxxer.hikari.HikariDataSource
+#    url: jdbc:h2:mem:db;DB_CLOSE_DELAY=-1;MODE=MYSQL;DATABASE_TO_LOWER=TRUE
+#    username: sa
+#    password: sa
+#    hikari:
+#      poolName: Hikari
+#      auto-commit: false
+    
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:mysql://127.0.0.1:3306/scdfdb
+    url: jdbc:mysql://127.0.0.1:3306/scdfdb2
     username: root
     password: ''
     hikari:
