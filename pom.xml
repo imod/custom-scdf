@@ -25,7 +25,7 @@
 		<spring-cloud.version>Hoxton.M2</spring-cloud.version>
 		<spring-cloud-dataflow.version>2.3.0.BUILD-SNAPSHOT</spring-cloud-dataflow.version>
 <!-- 		<spring-cloud-deployer.version>2.1.0.BUILD-SNAPSHOT</spring-cloud-deployer.version> -->
-		<mysql-jdbc-driver.version>8.0.16</mysql-jdbc-driver.version>
+		<mysql-jdbc-driver.version>8.0.28</mysql-jdbc-driver.version>
 	</properties>
 
 	<dependencies>
